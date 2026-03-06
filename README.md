@@ -1,15 +1,20 @@
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Python](https://img.shields.io/badge/backend-Python-green)
+![React](https://img.shields.io/badge/frontend-React-blue)
 # EcoSphere
 ### A Living Digital Ecosystem Simulation
 
-EvoSphere is an interactive web-based simulation of a **living digital ecosystem** where autonomous agents move, interact, compete for resources, and evolve over time.
+EcoSphere is an interactive web-based simulation of a **living digital ecosystem** where autonomous agents move, interact, compete for resources, and evolve over time.
 
-The system demonstrates how **complex emergent behaviors can arise from simple rules**, allowing users to observe dynamic ecosystems forming in real time.
+The system demonstrates how **complex emergent behaviors can arise from simple rules**, allowing users to observe dynamic ecosystems forming in real time. 
+
+The simulation engine runs on the backend, while the frontend provides real-time visualization and interaction with the ecosystem.
 
 ---
 
-## Overview
+## Project Overview
 
-EvoSphere models a virtual environment populated by autonomous agents that behave according to simple biological and environmental rules.
+EcoSphere models a virtual environment populated by autonomous agents that behave according to simple biological and environmental rules.
 
 Each agent can:
 
@@ -35,12 +40,12 @@ The simulation is fully interactive, allowing users to modify environmental para
 - Dynamic resource spawning
 - Visualized agent interactions
 - Live ecosystem statistics
-
+- Simulation history and replay of previous ecosystem runs
 ---
 
 ## Simulation Concepts
 
-EvoSphere explores several important concepts in computer science and complex systems:
+EcoSphere explores several important concepts in computer science and complex systems:
 
 - Agent-based simulation
 - Emergent behavior
@@ -55,26 +60,37 @@ The goal is to demonstrate how simple rule sets can lead to **unexpected and com
 
 ## Tech Stack
 
+### Frontend
+
 - **React**
 - **TypeScript**
 - **Vite**
-- **PixiJS** (high-performance rendering)
+- **PixiJS** (high-performance 2D rendering for real-time ecosystem visualization)
 - **Zustand** (state management)
 - **Tailwind CSS**
 
-The simulation runs entirely in the browser and requires **no backend infrastructure**.
+The frontend is responsible for rendering the ecosystem, providing simulation controls, and visualizing both live simulations and historical runs.
 
 ---
 
-## Getting Started
+### Backend
 
-Clone the repository:
+- **Python**
+- **FastAPI** (modern high-performance API framework)
+- **PostgreSQL** (persistent storage for worlds, runs, and simulation data)
+- **SQLModel / SQLAlchemy** (database modeling and ORM)
 
-```bash
-git clone https://github.com/your-username/evosphere.git
-npm install
-npm run dev
-```
+The backend runs the **simulation engine**, processes ecosystem ticks, stores simulation states, and exposes APIs to retrieve past simulations and world configurations.
+
+---
+
+### Real-Time Communication
+
+- **WebSocket**
+
+Used for streaming simulation updates from the backend to the frontend during live ecosystem simulations.
+
+---
 
 ## Simulation Controls
 
@@ -106,12 +122,7 @@ Potential future enhancements include:
 
 ## Why This Project
 
-EvoSphere was created as an exploration of:
-
-- complex systems
-- emergent behavior
-- agent-based modeling
-- interactive simulation design
+EcoSphere explores how complex behaviors can emerge from simple rules using agent-based simulations. The project combines distributed systems, real-time visualization, and artificial life concepts to create an interactive computational ecosystem.
 
 The project aims to bridge **computer science, artificial life, and simulation** into a visual and interactive experience.
 
